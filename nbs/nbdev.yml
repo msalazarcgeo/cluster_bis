@@ -1,0 +1,9 @@
+project:
+  output-dir: _docs
+
+website:
+  title: "cluster_bis"
+  site-url: "https://msalazarcgeo.github.io/cluster_bis"
+  description: "Revisión del curso"
+  repo-branch: main
+  repo-url: "https://github.com/msalazarcgeo/cluster_bis"
