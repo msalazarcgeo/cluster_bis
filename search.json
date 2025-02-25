@@ -1,0 +1,52 @@
+[
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "cluster_bis",
+    "section": "",
+    "text": "This file will become your README and also the index of your documentation.",
+    "crumbs": [
+      "cluster_bis"
+    ]
+  },
+  {
+    "objectID": "index.html#developer-guide",
+    "href": "index.html#developer-guide",
+    "title": "cluster_bis",
+    "section": "Developer Guide",
+    "text": "Developer Guide\nIf you are new to using nbdev here are some useful pointers to get you started.\n\nInstall cluster_bis in Development mode\n# make sure cluster_bis package is installed in development mode\n$ pip install -e .\n\n# make changes under nbs/ directory\n# ...\n\n# compile to have changes apply to cluster_bis\n$ nbdev_prepare",
+    "crumbs": [
+      "cluster_bis"
+    ]
+  },
+  {
+    "objectID": "index.html#usage",
+    "href": "index.html#usage",
+    "title": "cluster_bis",
+    "section": "Usage",
+    "text": "Usage\n\nInstallation\nInstall latest from the GitHub repository:\n$ pip install git+https://github.com/msalazarcgeo/cluster_bis.git\nor from conda\n$ conda install -c msalazarcgeo cluster_bis\nor from pypi\n$ pip install cluster_bis\n\n\nDocumentation\nDocumentation can be found hosted on this GitHub repository’s pages. Additionally you can find package manager specific guidelines on conda and pypi respectively.",
+    "crumbs": [
+      "cluster_bis"
+    ]
+  },
+  {
+    "objectID": "index.html#how-to-use",
+    "href": "index.html#how-to-use",
+    "title": "cluster_bis",
+    "section": "How to use",
+    "text": "How to use\nFill me in please! Don’t forget code examples:\n\n1+1\n\n2",
+    "crumbs": [
+      "cluster_bis"
+    ]
+  },
+  {
+    "objectID": "00_cluster.html",
+    "href": "00_cluster.html",
+    "title": "cluster_bis",
+    "section": "",
+    "text": "import sklearn\nimport random\nimport numpy as np\nimport shapely\nfrom sklearn.cluster import DBSCAN, HDBSCAN, OPTICS, KMeans\nimport matplotlib.pyplot as plt\n\n\n\ndata_points\n\n data_points (n, min_x=0, min_y=0, max_x=1, max_y=1, seed=None)\n\nUna clase que contiene a los datos\n\n\n\nClusters\n\n Clusters (data_structure)\n\nUna clase que contiene los clusters\n\n# nbdev.show_doc(Clusters.KMeans)\n\n# nbdev.show_doc(Clusters.DBSCAN)\n\n# nbdev.show_doc(Clusters.HDBSCAN)\n\n# nbdev.show_doc(Clusters.OPTICS)\n\n\ndatos_simples_3 = data_points(500, min_x=0.6, min_y=0.6, max_x=1.0, max_y=1.0)\ndatos_simples_2 = data_points(500, min_x=0.0, min_y=0.6, max_x=0.4, max_y=1.0)\ndatos_simples_1 = data_points(500, min_x=0.6, min_y=0.0, max_x=1.0, max_y=0.4)\ndatos_simples_0 = data_points(500, min_x=0.0, min_y=0.0, max_x=0.4, max_y=0.4)\n\ndatos_simples_0.add_points(datos_simples_1)\ndatos_simples_0.add_points(datos_simples_2)\ndatos_simples_0.add_points(datos_simples_3)\n\ndatos_simples_0.get_Multypoint()\ncluster_all = Clusters(datos_simples_0)\ncluster_all.OPTICS()\ncluster_all.HDBSCAN()\ncluster_all.DBSCAN(eps=0.1, min_samples=10)\ncluster_all.KMeans()\n\nKMeans(n_clusters=4)In a Jupyter environment, please rerun this cell to show the HTML representation or trust the notebook. On GitHub, the HTML representation is unable to render, please try loading this page with nbviewer.org.  KMeans?Documentation for KMeansiFittedKMeans(n_clusters=4) \n\n\n\nfig, ax = plt.subplots(1, 1, figsize=(6, 6))\nplt.scatter(\n    cluster_all.data_structure.get_X(),\n    cluster_all.data_structure.get_Y(),\n    c=cluster_all.data_structure.classes_Kmeans\n)\n\n\n\n\n\n\n\n\n\nfig, ax = plt.subplots(1, 1, figsize=(6, 6))\nplt.scatter(\n    cluster_all.data_structure.get_X(),\n    cluster_all.data_structure.get_Y(),\n    c=cluster_all.data_structure.classes_DBSCAN\n)\n\n\n\n\n\n\n\n\n\nfig, ax = plt.subplots(1, 1, figsize=(6, 6))\nplt.scatter(\n    cluster_all.data_structure.get_X(),\n    cluster_all.data_structure.get_Y(),\n    c=cluster_all.data_structure.classes_HDBSCAN\n)\n\n\n\n\n\n\n\n\n\nfig, ax = plt.subplots(1, 1, figsize=(6, 6))\nplt.scatter(\n    cluster_all.data_structure.get_X(),\n    cluster_all.data_structure.get_Y(),\n    c=cluster_all.data_structure.classes_OPTICS\n)",
+    "crumbs": [
+      "00_cluster.html"
+    ]
+  }
+]
